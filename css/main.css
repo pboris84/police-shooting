@@ -1,1 +1,29 @@
-/* You'll probably want to add some styles here */
+/*
+Boris Pavlov #0841034 
+INFO 343 Challenge 4 Police Shooting Map 
+Instructor: Michael Freeman, sum2015
+Style Guide: http://www.w3schools.com/html/html5_syntax.asp 
+*/
+Body {
+	background-color: gray;
+}
+
+#container {
+	border: 5px solid black;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#web {
+	display: block;
+	margin-left: 45%;
+}
+
+#exl {
+	display: block;
+	margin-left: 45%;
+}
+
+#desc {
+	margin-left: 30%;
+}
