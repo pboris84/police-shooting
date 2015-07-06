@@ -14,7 +14,7 @@ var drawMap = function() {
 var getData = function(map) {
 	var data; 
 	$.ajax({
-    	url:'../data/response.json', 
+    	url:'data/response.json', 
     	type: "get",
     	success:function(dat) {
     	   data = dat
