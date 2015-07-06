@@ -12,8 +12,7 @@ var drawMap = function() {
 }
 
 var getData = function(map) {
-
-var data; 
+	var data; 
 	$.ajax({
     	url:'../data/response.json', 
     	type: "get",
@@ -25,25 +24,22 @@ var data;
 	}) 
 }
 
-
 var customBuild = function(map, data) { 
 	data.map(function(d){ 
-
  	if (d['Hit or Killed?'] == "Killed") {
  		if (d['Armed or Unarmed?'] == "Unarmed") {
-
-         var circle = new L.circle([d.lat,d.lng], 200, {color:'red'}).addTo(map)  
+        	var circle = new L.circle([d.lat,d.lng], 200, {color:'red'}).addTo(map)  
      	}else {
-     	 var circle = new L.circle([d.lat,d.lng], 200, {color:'black'}).addTo(map)  
+     	 	var circle = new L.circle([d.lat,d.lng], 200, {color:'black'}).addTo(map)  
      	}
     } else {
     	var circle = new L.circle([d.lat,d.lng], 200, {color:'blue'}).addTo(map)   
     }
-         var name = "<p> Victim: ".bold() +  d['Victim Name'] + "</p>";
-         var summaryText = "<p> Summary: ".bold() + d.Summary + "</p>"; 
-         var date = "<p> Date of Incident: ".bold() + d['Date Searched'] + "</p>"; 
-         var location = "<p> State: ".bold() + d.State + ", County: ".bold() + d.County + ", City: ".bold() + d.City + "</p>";
-         circle.bindPopup(name + summaryText + location + date);   
-     })
+      var name = "<p> Victim: ".bold() +  d['Victim Name'] + "</p>";
+      var summaryText = "<p> Summary: ".bold() + d.Summary + "</p>"; 
+      var date = "<p> Date of Incident: ".bold() + d['Date Searched'] + "</p>"; 
+      var location = "<p> State: ".bold() + d.State + ", County: ".bold() + d.County + ", City: ".bold() + d.City + "</p>";
+      circle.bindPopup(name + summaryText + location + date);   
+    })
 }
 
